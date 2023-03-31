@@ -1,9 +1,59 @@
-body {
-  background: #333;
-  padding-top: 5em;
-  display: flex;
-  justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Gruppo&family=Source+Code+Pro&family=Tangerine:wght@700&display=swap");
+
+:root {
+  --gruppo: "Gruppo", "cursive";
+  --cormorant: "Cormorant", "serif";
+  --gradient-colors: #1fa2ff, #12d8fa, #a6ffcb;
 }
+
+/*Generic styles*/
+p,
+li,
+h2,
+h1 {
+  color: white;
+}
+
+p {
+  font-family: var(--gruppo);
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+li {
+  font-family: var(--gruppo);
+  font-size: 1.8em;
+  list-style-type: none;
+}
+
+h2 {
+  font-family: var(--cormorant);
+  font-size: 2.2em;
+}
+
+h1 {
+  font-family: var(--gruppo);
+  font-size: 3.5em;
+}
+
+#name {
+  font-family: var(--cormorant);
+  font-size: 1.4em;
+  margin: 0;
+}
+
+a:link {
+  color: white;
+}
+
+/*end of generic styles*/
+
+body {
+  margin: 0 5% 0 5%;
+  background-color: black;
+}
+
+/*typeWriter*/
 
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -34,3 +84,109 @@ body {
     border-color: orange;
   }
 }
+/*end of typewriter*/
+
+.projects-container img {
+  width: 15%;
+}
+
+.tech-container img {
+  width: 15%;
+}
+
+/*header*/
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 1em 0 1em 0;
+}
+
+header img {
+  max-width: 100%;
+  max-height: 100%;
+  height: fit-content;
+}
+
+.icons-container {
+  height: 2em;
+  overflow: hidden;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.icons-container img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.header-imgs-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+header {
+  text-decoration: underline;
+}
+
+hr {
+  background-image: linear-gradient(to right, var(--gradient-colors));
+  border: 0;
+  height: 2px;
+}
+
+/*end of header*/
+
+/*description*/
+
+.description-container::before {
+  content: " ";
+  width: 2px;
+  background-image: linear-gradient(to bottom, var(--gradient-colors));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+
+.cv-container::before {
+  content: " ";
+  width: 2px;
+  background-image: linear-gradient(to bottom, var(--gradient-colors));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+
+.description-container,
+.cv-container {
+  margin-left: 30px;
+  display: block;
+  position: relative;
+}
+
+.cv-container span a {
+  text-decoration: none;
+  background-image: linear-gradient(to right, var(--gradient-colors));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 1px;
+  padding-bottom: 3px;
+}
+
+/*end of description*/
+
+/*projects*/
+
+.projects-container {
+  border-style: solid;
+  border-width: 20px 0 0 20px;
+  border-color: red transparent transparent red;
+  border-radius: 0 0 20px 0;
+}
+
+/*end of projects*/

@@ -181,12 +181,53 @@ hr {
 /*end of description*/
 
 /*projects*/
-
 .projects-container {
-  border-style: solid;
-  border-width: 20px 0 0 20px;
-  border-color: red transparent transparent red;
-  border-radius: 0 0 20px 0;
+  padding: 10px;
+  background: linear-gradient(
+        to right,
+        var(--gradient-colors) 2px,
+        transparent 4px
+      )
+      0 0,
+    linear-gradient(to right, var(--gradient-colors) 2px, transparent 2px) 0
+      100%,
+    linear-gradient(to left, var(--gradient-colors) 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, var(--gradient-colors) 2px, transparent 2px) 100%
+      100%,
+    linear-gradient(to bottom, var(--gradient-colors) 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, var(--gradient-colors) 2px, transparent 2px) 100%
+      0,
+    linear-gradient(to top, var(--gradient-colors) 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, var(--gradient-colors) 2px, transparent 2px) 100%
+      100%;
+  background-repeat: no-repeat;
+  background-size: 67px 67px;
+  margin-top: 3em;
 }
 
+ul {
+  padding: 0;
+  margin-left: 1em;
+}
+
+.projects-container h2 {
+  text-align: center;
+}
+
+.projects-container ul li {
+  line-height: 2;
+}
+
+.projects-container ul li span {
+  text-decoration: none;
+  background-image: linear-gradient(to right, var(--gradient-colors));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 1px;
+  padding-bottom: 3px;
+}
+
+.projects-container ul li:last-child {
+  margin-bottom: 1em;
+}
 /*end of projects*/

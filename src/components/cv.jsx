@@ -1,16 +1,11 @@
 import React, { useContext } from "react";
-import UserContext from "./userContext";
+import UserContextVertical from "./userContextVertical";
 
 export const Cv = () => {
-  const { lineColours } = useContext(UserContext);
+  const { verticalLine } = useContext(UserContextVertical);
   return (
     <section className="cv-container">
-      <span
-        style={{
-          backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-        }}
-        className="side-bar gradient"
-      >
+      <span className={`gradient side-bar ${verticalLine.verticalLineClass}`}>
         <p>
           Check out my{" "}
           <span>

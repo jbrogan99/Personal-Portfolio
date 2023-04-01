@@ -33,7 +33,11 @@ export const Header = () => {
           </div>
         </span>
       </header>
-      <hr></hr>
+      <hr
+        style={{
+          backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+        }}
+      ></hr>
     </>
   );
 };

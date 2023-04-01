@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "./userContext";
+import UserContextVertical from "./userContextVertical";
 export const Projects = ({ setProjects }) => {
   const updateProjects = (projectName) => {
     const update = {
@@ -27,10 +28,23 @@ export const Projects = ({ setProjects }) => {
   function recipeLineColour(value) {
     if (value === "recipe") {
       setLineColours(["#FA8BFF", "#2BD2FF", "#2BFF88"]);
+      setVerticalLineProps({
+        verticalLineColours: `linear-gradient(to bottom,#FA8BFF, #2BD2FF, #2BFF88)`,
+        verticalLineClass: "clicked",
+      });
+    } else if (value === "doughnut") {
+      setLineColours(["#FF9A8B", "#FF6A88", "#FF99AC"]);
+      setVerticalLineProps({
+        verticalLineColours: `linear-gradient(to bottom,#FF9A8B, #FF6A88, #FF99AC)`,
+        verticalLineClass: "doughnut",
+      });
     }
-    console.log("line colour update", lineColours);
   }
+  // console.log("line colour update", lineColours);
+  // console.log("vlaue,", value);
+
   const { lineColours, setLineColours } = useContext(UserContext);
+  const { setVerticalLineProps } = useContext(UserContextVertical);
   return (
     <section className="projects-container gradient">
       <h2>Projects</h2>

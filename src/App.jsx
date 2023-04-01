@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import React from "react";
 import UserContext from "./components/userContext";
+import UserContextVertical from "./components/userContextVertical";
 import "./App.css";
 import { Header } from "./components/header";
 import { Description } from "./components/description-landing";
@@ -61,36 +62,45 @@ function App() {
     "#a6ffcb",
   ]);
 
-  const [verticalLineColours, setVerticalLineColours] = useState(
-    "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)"
-  );
+  const [verticalLine, setVerticalLineProps] = useState({
+    verticalLineColours:
+      "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)",
+    verticalLineClass: "",
+  });
 
   return (
     <>
-      <UserContext.Provider
-        value={{ lineColours: lineColours, setLineColours: setLineColours }}
+      <UserContextVertical.Provider
+        value={{
+          verticalLine,
+          setVerticalLineProps,
+        }}
       >
-        <Header />
-        {projects.landing && <Title title="welcome" />}
-        {projects.recipe && <Title title="Recipe" />}
-        {projects.doughnut && <Title title="Doughnut" />}
-        {projects.currency && <Title title="Currency Converter Widget" />}
-        {projects.blackjack && <Title title="Blackjack" />}
-        {projects.ecommerce && <Title title="E-commerce Trainer" />}
-        {projects.calculator && <Title title="Calculator" />}
-        <div id="grid-desktop">
-          {projects.landing && <Description description={descLanding} />}
-          {projects.recipe && <Description description={recipe} />}
-          {projects.doughnut && <Description description={doughnut} />}
-          {projects.currency && <Description description={currency} />}
-          {projects.blackjack && <Description description={blackjack} />}
-          {projects.ecommerce && <Description description={ecommerce} />}
-          {projects.calculator && <Description description={calculator} />}
-          <Cv />
-          <Projects projects={projects} setProjects={setProjects} />
-          <TechStack />
-        </div>
-      </UserContext.Provider>
+        <UserContext.Provider
+          value={{ lineColours: lineColours, setLineColours: setLineColours }}
+        >
+          <Header />
+          {projects.landing && <Title title="Welcome." />}
+          {projects.recipe && <Title title="Recipe" />}
+          {projects.doughnut && <Title title="Doughnut" />}
+          {projects.currency && <Title title="Currency Converter Widget" />}
+          {projects.blackjack && <Title title="Blackjack" />}
+          {projects.ecommerce && <Title title="E-commerce Trainer" />}
+          {projects.calculator && <Title title="Calculator" />}
+          <div id="grid-desktop">
+            {projects.landing && <Description description={descLanding} />}
+            {projects.recipe && <Description description={recipe} />}
+            {projects.doughnut && <Description description={doughnut} />}
+            {projects.currency && <Description description={currency} />}
+            {projects.blackjack && <Description description={blackjack} />}
+            {projects.ecommerce && <Description description={ecommerce} />}
+            {projects.calculator && <Description description={calculator} />}
+            <Cv />
+            <Projects projects={projects} setProjects={setProjects} />
+            <TechStack />
+          </div>
+        </UserContext.Provider>
+      </UserContextVertical.Provider>
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import UserContext from "./userContext";
+import UserContextVertical from "./userContextVertical";
 
 export const Description = ({ description }) => {
-  const { lineColours } = useContext(UserContext);
+  const { verticalLine } = useContext(UserContextVertical);
   return (
     <main className="description-container">
-      <span className="gradient side-bar">
+      <span className={`gradient side-bar ${verticalLine.verticalLineClass}`}>
         <p>{description}</p>
       </span>
     </main>

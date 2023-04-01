@@ -7,11 +7,15 @@ import js from "../images/js-min.png";
 import reactTesting from "../images/react-testing-library-min.png";
 import jestTesting from "../images/jest-min.png";
 import UserContext from "./userContext";
+import UserContextVertical from "./userContextVertical";
 
 export const TechStack = () => {
+  const { verticalLine } = useContext(UserContextVertical);
   const { lineColours } = useContext(UserContext);
   return (
-    <section className="tech-stack-container">
+    <section
+      className={`tech-stack-container ${verticalLine.verticalLineClass}`}
+    >
       <span className="tech-stack-title-container">
         <h2>Tech Stack</h2>
       </span>

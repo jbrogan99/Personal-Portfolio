@@ -1,9 +1,10 @@
-import React from "react";
 import github from "../images/github-min.png";
 import mail from "../images/mail-min.png";
 import linkedin from "../images/linkedin-svgrepo-com.svg";
-
+import React, { useContext } from "react";
+import UserContext from "./userContext";
 export const Header = () => {
+  const { lineColours } = useContext(UserContext);
   return (
     <>
       <header>

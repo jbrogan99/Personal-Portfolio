@@ -129,7 +129,6 @@ header img {
 }
 
 hr {
-  background-image: linear-gradient(to right, var(--gradient-colors));
   border: 0;
   height: 2px;
 }
@@ -219,7 +218,7 @@ hr {
 
 .projects-container ul li span {
   text-decoration: none;
-  background-image: linear-gradient(to right, var(--gradient-colors));
+
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% 1px;
@@ -307,6 +306,7 @@ hr {
     width: 2px;
     height: 500px;
     background-image: linear-gradient(to bottom, var(--gradient-colors));
+    transition: all 0.3s ease-in-out;
     position: absolute;
     top: 18%;
     bottom: 0;

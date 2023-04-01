@@ -1,4 +1,6 @@
 import logo from "./logo.svg";
+import React from "react";
+import UserContext from "./components/userContext";
 import "./App.css";
 import { Header } from "./components/header";
 import { Description } from "./components/description-landing";
@@ -6,7 +8,7 @@ import { Cv } from "./components/cv";
 import { Projects } from "./components/projects";
 import { TechStack } from "./components/techStack";
 import { Title } from "./components/title";
-import { useEffect, useState } from "react";
+import { useState, createContext, useContext } from "react";
 
 const descLanding =
   "Hello, I’m Jack, a Front-End Software Engineer from Wigan. Over the past 3 years I have been developing creative, accessible, responsive and functional websites. Currently finishing my university degree in web design and development May 2023!  In my spare time I enjoy socialising, keeping fit and gaming, that’s if im not coding! ";
@@ -53,30 +55,42 @@ function App() {
     calculator: false,
     landing: true,
   });
+  const [lineColours, setLineColours] = useState([
+    "#1fa2ff",
+    "#12d8fa",
+    "#a6ffcb",
+  ]);
 
-  console.log("state", projects);
+  const [verticalLineColours, setVerticalLineColours] = useState(
+    "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)"
+  );
+
   return (
     <>
-      <Header />
-      {projects.landing && <Title title="welcome" />}
-      {projects.recipe && <Title title="Recipe" />}
-      {projects.doughnut && <Title title="Doughnut" />}
-      {projects.currency && <Title title="Currency Converter Widget" />}
-      {projects.blackjack && <Title title="Blackjack" />}
-      {projects.ecommerce && <Title title="E-commerce Trainer" />}
-      {projects.calculator && <Title title="Calculator" />}
-      <div id="grid-desktop">
-        {projects.landing && <Description description={descLanding} />}
-        {projects.recipe && <Description description={recipe} />}
-        {projects.doughnut && <Description description={doughnut} />}
-        {projects.currency && <Description description={currency} />}
-        {projects.blackjack && <Description description={blackjack} />}
-        {projects.ecommerce && <Description description={ecommerce} />}
-        {projects.calculator && <Description description={calculator} />}
-        <Cv />
-        <Projects projects={projects} setProjects={setProjects} />
-        <TechStack />
-      </div>
+      <UserContext.Provider
+        value={{ lineColours: lineColours, setLineColours: setLineColours }}
+      >
+        <Header />
+        {projects.landing && <Title title="welcome" />}
+        {projects.recipe && <Title title="Recipe" />}
+        {projects.doughnut && <Title title="Doughnut" />}
+        {projects.currency && <Title title="Currency Converter Widget" />}
+        {projects.blackjack && <Title title="Blackjack" />}
+        {projects.ecommerce && <Title title="E-commerce Trainer" />}
+        {projects.calculator && <Title title="Calculator" />}
+        <div id="grid-desktop">
+          {projects.landing && <Description description={descLanding} />}
+          {projects.recipe && <Description description={recipe} />}
+          {projects.doughnut && <Description description={doughnut} />}
+          {projects.currency && <Description description={currency} />}
+          {projects.blackjack && <Description description={blackjack} />}
+          {projects.ecommerce && <Description description={ecommerce} />}
+          {projects.calculator && <Description description={calculator} />}
+          <Cv />
+          <Projects projects={projects} setProjects={setProjects} />
+          <TechStack />
+        </div>
+      </UserContext.Provider>
     </>
   );
 }

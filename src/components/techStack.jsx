@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import react from "../images/react-min.png";
 import typescript from "../images/ts-min.png";
 import html from "../images/html-min.png";
@@ -6,8 +6,10 @@ import css from "../images/css-min.png";
 import js from "../images/js-min.png";
 import reactTesting from "../images/react-testing-library-min.png";
 import jestTesting from "../images/jest-min.png";
+import UserContext from "./userContext";
 
 export const TechStack = () => {
+  const { lineColours } = useContext(UserContext);
   return (
     <section className="tech-stack-container">
       <span className="tech-stack-title-container">
@@ -15,7 +17,11 @@ export const TechStack = () => {
       </span>
       <ul className="ul-tech">
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="react tech-name">React</li>
@@ -24,7 +30,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="ts tech-name">TypeScript</li>
@@ -33,7 +43,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="html tech-name">HTML</li>
@@ -42,7 +56,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="css tech-name">CSS</li>
@@ -51,7 +69,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="js tech-name">JavaScript</li>
@@ -60,7 +82,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="react-testing tech-name">React Testing Library</li>
@@ -69,7 +95,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
         <div className="tech-container">
           <li className="jest tech-name">Jest</li>
@@ -78,7 +108,11 @@ export const TechStack = () => {
           </li>
         </div>
         <li>
-          <hr />
+          <hr
+            style={{
+              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+            }}
+          />
         </li>
       </ul>
     </section>

@@ -1,6 +1,6 @@
-import React from "react";
-
-export const Projects = ({ projects, setProjects }) => {
+import React, { useContext } from "react";
+import UserContext from "./userContext";
+export const Projects = ({ setProjects }) => {
   const updateProjects = (projectName) => {
     const update = {
       recipe: false,
@@ -24,8 +24,15 @@ export const Projects = ({ projects, setProjects }) => {
     calculator: "Calculator",
   };
 
+  function recipeLineColour(value) {
+    if (value === "recipe") {
+      setLineColours(["#FA8BFF", "#2BD2FF", "#2BFF88"]);
+    }
+    console.log("line colour update", lineColours);
+  }
+  const { lineColours, setLineColours } = useContext(UserContext);
   return (
-    <section className="projects-container">
+    <section className="projects-container gradient">
       <h2>Projects</h2>
       <ul>
         {Object.entries(values).map((value) => {
@@ -33,7 +40,12 @@ export const Projects = ({ projects, setProjects }) => {
           return (
             <li>
               <span
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+                }}
+                className="gradient"
                 onClick={() => {
+                  recipeLineColour(value[0]);
                   updateProjects(value[0]); // key
                 }}
               >

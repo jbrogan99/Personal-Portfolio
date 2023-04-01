@@ -3,7 +3,9 @@ import React from "react";
 export const Description = ({ description }) => {
   return (
     <main className="description-container">
-      <p>{description}</p>
+      <span className="side-bar">
+        <p>{description}</p>
+      </span>
     </main>
   );
 };

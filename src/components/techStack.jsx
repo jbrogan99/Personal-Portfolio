@@ -9,24 +9,78 @@ import jestTesting from "../images/jest-min.png";
 
 export const TechStack = () => {
   return (
-    <section className="tech-container">
-      <h2>Tech Stack</h2>
-      <ul>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React Testing Library</li>
-        <li>Jest</li>
+    <section className="tech-stack-container">
+      <span className="tech-stack-title-container">
+        <h2>Tech Stack</h2>
+      </span>
+      <ul className="ul-tech">
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="react tech-name">React</li>
+          <li className="tech-logo-container">
+            <img src={react} alt="react logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="ts tech-name">TypeScript</li>
+          <li className="tech-logo-container">
+            <img src={typescript} alt="typescript logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="html tech-name">HTML</li>
+          <li className="tech-logo-container">
+            <img src={html} alt="html logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="css tech-name">CSS</li>
+          <li className="tech-logo-container">
+            <img src={css} alt="css logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="js tech-name">JavaScript</li>
+          <li className="tech-logo-container">
+            <img src={js} alt="javascript logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="react-testing tech-name">React Testing Library</li>
+          <li className="tech-logo-container">
+            <img src={reactTesting} alt="react testing library logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
+        <div className="tech-container">
+          <li className="jest tech-name">Jest</li>
+          <li className="tech-logo-container">
+            <img src={jestTesting} alt="jest testing library logo" />
+          </li>
+        </div>
+        <li>
+          <hr />
+        </li>
       </ul>
-      <img src={react} alt="react logo" />
-      <img src={typescript} alt="react logo" />
-      <img src={html} alt="react logo" />
-      <img src={css} alt="react logo" />
-      <img src={js} alt="react logo" />
-      <img src={reactTesting} alt="react logo" />
-      <img src={jestTesting} alt="react logo" />
     </section>
   );
 };

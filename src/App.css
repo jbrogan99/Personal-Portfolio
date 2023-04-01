@@ -7,8 +7,6 @@
 }
 
 /*Generic styles*/
-p,
-li,
 h2,
 h1 {
   color: white;
@@ -16,18 +14,18 @@ h1 {
 
 p {
   font-family: var(--gruppo);
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.3;
 }
 
 li {
   font-family: var(--gruppo);
-  font-size: 1.8em;
+  font-size: 1.5em;
   list-style-type: none;
 }
 
 h2 {
-  font-family: var(--cormorant);
+  font-family: var(--gruppo);
   font-size: 2.2em;
 }
 
@@ -37,7 +35,7 @@ h1 {
 }
 
 #name {
-  font-family: var(--cormorant);
+  font-family: var(--gruppo);
   font-size: 1.4em;
   margin: 0;
 }
@@ -46,42 +44,44 @@ a:link {
   color: white;
 }
 
+ul {
+  padding: 0;
+}
+
 /*end of generic styles*/
 
 body {
+  color: #d1d1d1;
+  background-color: #1d1d20;
   margin: 0 5% 0 5%;
-  background-color: black;
 }
 
 /*typeWriter*/
 
 .typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  font-size: 4rem;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  animation: draw 1.5s linear forwards;
 }
 
 /* The typing effect */
 @keyframes typing {
   from {
-    width: 0;
+    width: 50%;
   }
   to {
-    width: 100%;
+    width: 0;
   }
 }
 
 /* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
+@keyframes draw {
+  from {
+    width: 100%;
   }
-  50% {
-    border-color: orange;
+  to {
+    width: 0;
   }
 }
 /*end of typewriter*/
@@ -128,10 +128,6 @@ header img {
   gap: 1.5em;
 }
 
-header {
-  text-decoration: underline;
-}
-
 hr {
   background-image: linear-gradient(to right, var(--gradient-colors));
   border: 0;
@@ -152,7 +148,12 @@ hr {
   left: -30px;
 }
 
-.cv-container::before {
+.side-bar {
+  position: relative;
+  display: block;
+}
+
+.side-bar::before {
   content: " ";
   width: 2px;
   background-image: linear-gradient(to bottom, var(--gradient-colors));
@@ -165,8 +166,6 @@ hr {
 .description-container,
 .cv-container {
   margin-left: 30px;
-  display: block;
-  position: relative;
 }
 
 .cv-container span a {
@@ -205,7 +204,7 @@ hr {
   margin-top: 3em;
 }
 
-ul {
+.projects-container ul {
   padding: 0;
   margin-left: 1em;
 }
@@ -231,3 +230,140 @@ ul {
   margin-bottom: 1em;
 }
 /*end of projects*/
+
+/*tech stack*/
+
+.tech-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tech-logo-container {
+  display: flex;
+  justify-content: flex-end;
+  height: 3em;
+  width: 3em;
+}
+
+.tech-name {
+  align-self: center;
+}
+
+.tech-logo-container img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+}
+
+.tech-stack-container h2 {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.react-testing {
+  white-space: nowrap;
+}
+
+/*end of tech stack*/
+
+/*desktop*/
+
+@media only screen and (min-width: 992px) {
+  .typewriter h1 {
+    font-size: 5em;
+    margin: 0.7em 0 0.7em 0;
+    white-space: nowrap;
+  }
+
+  p {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+
+  #grid-desktop {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    grid-template-rows: 20% auto;
+    gap: 3em;
+  }
+
+  .description-container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .tech-stack-container {
+    margin-left: 30px;
+    display: block;
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tech-stack-container::before {
+    content: " ";
+    width: 2px;
+    height: 500px;
+    background-image: linear-gradient(to bottom, var(--gradient-colors));
+    position: absolute;
+    top: 18%;
+    bottom: 0;
+    left: -30px;
+  }
+
+  .cv-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .side-bar {
+    position: relative;
+    display: block;
+  }
+
+  .side-bar::before {
+    content: " ";
+    width: 2px;
+    background-image: linear-gradient(to bottom, var(--gradient-colors));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+  }
+
+  .projects-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: fit-content;
+  }
+
+  .ul-tech {
+    margin-left: 8em;
+    width: 60%;
+  }
+
+  .tech-stack-title-container {
+    position: relative;
+  }
+
+  .tech-stack-container h2 {
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    transform-origin: center center;
+    white-space: nowrap;
+    margin-left: 1.5em;
+  }
+
+  .projects-container ul {
+    margin-left: 3em;
+  }
+
+  .description-container::before {
+    height: inherit;
+  }
+}
+
+/*end of desktop*/

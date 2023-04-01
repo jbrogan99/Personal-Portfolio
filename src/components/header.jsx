@@ -1,7 +1,7 @@
 import React from "react";
 import github from "../images/github-min.png";
 import mail from "../images/mail-min.png";
-import linkedin from "../images/linkedin-min.png";
+import linkedin from "../images/linkedin-svgrepo-com.svg";
 
 export const Header = () => {
   return (

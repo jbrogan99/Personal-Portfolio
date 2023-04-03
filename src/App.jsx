@@ -69,7 +69,21 @@ function App() {
     verticalLineClass: "",
   });
 
-  const [activePage, setActivePage] = useState("welcome");
+  const [activePage, setActivePage] = useState("home");
+
+  const updateProjects = (projectName) => {
+    const update = {
+      recipe: false,
+      doughnut: false,
+      currency: false,
+      blackjack: false,
+      ecommerce: false,
+      calculator: false,
+      landing: false,
+    };
+    update[projectName] = true;
+    setProjects(update);
+  };
 
   return (
     <>
@@ -82,7 +96,11 @@ function App() {
         <UserContext.Provider
           value={{ lineColours: lineColours, setLineColours: setLineColours }}
         >
-          <Header />
+          <Header
+            activePage={activePage}
+            setActivePage={setActivePage}
+            updateProjects={updateProjects}
+          />
           {projects.landing && <Title title="Welcome." />}
           {projects.recipe && <Title title="Recipe" />}
           {projects.doughnut && <Title title="Doughnut" />}
@@ -92,24 +110,56 @@ function App() {
           {projects.calculator && <Title title="Calculator" />}
           <div id="grid-desktop">
             {projects.landing && <Description description={descLanding} />}
-            {projects.recipe && <DescriptionProjects description={recipe} />}
+            {projects.recipe && (
+              <DescriptionProjects
+                projects={projects}
+                description={recipe}
+                gitHubRepo="https://github.com/jbrogan99/recipe-app"
+                siteLink="https://recipe-jbrogan.netlify.app"
+              />
+            )}
             {projects.doughnut && (
-              <DescriptionProjects description={doughnut} />
+              <DescriptionProjects
+                projects={projects}
+                description={doughnut}
+                gitHubRepo="https://github.com/jbrogan99/doughnuts-responsive"
+                siteLink="https://doughnuts-jbrogan.netlify.app"
+              />
             )}
             {projects.currency && (
-              <DescriptionProjects description={currency} />
+              <DescriptionProjects
+                projects={projects}
+                description={currency}
+                gitHubRepo="https://github.com/jbrogan99/currency-converter-widget"
+                siteLink="https://currency-converter-jbrogan.netlify.app"
+              />
             )}
             {projects.blackjack && (
-              <DescriptionProjects description={blackjack} />
+              <DescriptionProjects
+                projects={projects}
+                description={blackjack}
+                gitHubRepo="https://github.com/jbrogan99/blackjack"
+              />
             )}
             {projects.ecommerce && (
-              <DescriptionProjects description={ecommerce} />
+              <DescriptionProjects
+                projects={projects}
+                description={ecommerce}
+                gitHubRepo="https://github.com/jbrogan99/E-commerce-Website"
+                siteLink="https://trainers-jbrogan.netlify.app"
+              />
             )}
             {projects.calculator && (
-              <DescriptionProjects description={calculator} />
+              <DescriptionProjects
+                projects={projects}
+                description={calculator}
+                gitHubRepo="https://github.com/jbrogan99/tip-calculator"
+                siteLink="https://tip-calculator-jbrogan.netlify.app"
+              />
             )}
             <Cv />
             <Projects
+              updateProjects={updateProjects}
               projects={projects}
               setProjects={setProjects}
               activePage={activePage}

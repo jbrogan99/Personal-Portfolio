@@ -44,7 +44,6 @@ h1 {
 #name {
   font-family: var(--gruppo);
   font-size: 1.4em;
-  margin: 0;
 }
 
 a:link {
@@ -101,37 +100,74 @@ body {
 }
 
 /*header*/
-header {
+/* header {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   margin: 1em 0 1em 0;
+  align-items: center;
+} */
+
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  height: 5em;
+}
+.home-text {
+  cursor: pointer;
 }
 
-header img {
-  max-width: 100%;
-  max-height: 100%;
-  height: fit-content;
+.home-text:hover {
+  color: white;
+}
+.icon-imgs:hover {
+  background-color: white;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.header-text-container p {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin: 0;
+}
+.header-imgs-container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
 }
 
 .icons-container {
   height: 2em;
+  width: 2em;
   overflow: hidden;
-  background-color: grey;
-  border-radius: 50%;
+  display: inline-block;
 }
 
 .icons-container img {
-  width: 100%;
+  border-radius: 50%;
+  background-color: #d1d1d1;
+  display: block;
+  max-width: 100%;
   height: auto;
-  display: inline-block;
   margin: 0 auto;
-}
+  overflow: hidden;
 
-.header-imgs-container {
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
+  /* background-color: #d1d1d1; */
 }
 
 hr {
@@ -179,6 +215,8 @@ hr {
   position: relative;
   color: white;
   padding-bottom: 3px;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .cv-text::before,
@@ -497,6 +535,10 @@ hr {
 .react-testing {
   white-space: nowrap;
 }
+a {
+  overflow: visible !important;
+  z-index: 0;
+}
 
 /*end of tech stack*/
 
@@ -511,7 +553,6 @@ hr {
 
   p {
     font-size: 1.5rem;
-    margin-top: 0;
   }
 
   .link-container a,
@@ -522,7 +563,7 @@ hr {
   #grid-desktop {
     display: grid;
     grid-template-columns: 60% 1fr;
-    grid-template-rows: 20% auto;
+    grid-template-rows: 25% auto;
     gap: 3em;
   }
 
@@ -580,6 +621,15 @@ hr {
     grid-column: 2/3;
     grid-row: 2/3;
     height: fit-content;
+  }
+
+  .icons-container {
+    height: 3em;
+    width: 3em;
+  }
+
+  .header-imgs-container {
+    gap: 1.5em;
   }
 
   .ul-tech {

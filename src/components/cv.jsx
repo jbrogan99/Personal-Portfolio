@@ -9,7 +9,10 @@ export const Cv = () => {
         <p>
           Check out my{" "}
           <span>
-            <a href="#" className={`cv-text ${verticalLine.verticalLineClass}`}>
+            <a
+              href="https://jack-brogan-cv.netlify.app/"
+              className={`cv-text ${verticalLine.verticalLineClass}`}
+            >
               CV
             </a>
           </span>{" "}

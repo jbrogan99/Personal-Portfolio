@@ -1,21 +1,12 @@
 import React, { useContext } from "react";
 import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
-export const Projects = ({ setProjects, setActivePage, activePage }) => {
-  const updateProjects = (projectName) => {
-    const update = {
-      recipe: false,
-      doughnut: false,
-      currency: false,
-      blackjack: false,
-      ecommerce: false,
-      calculator: false,
-      landing: false,
-    };
-    update[projectName] = true;
-    setProjects(update);
-  };
-
+export const Projects = ({
+  setProjects,
+  setActivePage,
+  activePage,
+  updateProjects,
+}) => {
   const values = {
     recipe: "Recipe",
     doughnut: "Doughnut",
@@ -25,8 +16,8 @@ export const Projects = ({ setProjects, setActivePage, activePage }) => {
     calculator: "Calculator",
   };
 
-  function recipeLineColour(value) {
-    if (value === "recipe") {
+  function recipeLineColour(name) {
+    if (name === "recipe") {
       setLineColours([
         "rgba(252, 37, 103, 1)",
         "rgba(250, 38, 151, 1)",
@@ -35,27 +26,27 @@ export const Projects = ({ setProjects, setActivePage, activePage }) => {
       setVerticalLineProps({
         verticalLineClass: "recipe",
       });
-    } else if (value === "doughnut") {
+    } else if (name === "doughnut") {
       setLineColours(["#642b73", "#812d73", "#c6426e"]);
       setVerticalLineProps({
         verticalLineClass: "doughnut",
       });
-    } else if (value === "currency") {
+    } else if (name === "currency") {
       setLineColours(["#304352", "#607686", "#d7d2cc"]);
       setVerticalLineProps({
         verticalLineClass: "currency",
       });
-    } else if (value === "blackjack") {
+    } else if (name === "blackjack") {
       setLineColours(["#2980b9", "#d0f2ff", "#ffffff"]);
       setVerticalLineProps({
         verticalLineClass: "blackjack",
       });
-    } else if (value === "ecommerce") {
+    } else if (name === "ecommerce") {
       setLineColours(["#a8ff78", "#78ffd6", "#b6ffe9"]);
       setVerticalLineProps({
         verticalLineClass: "ecommerce",
       });
-    } else if (value === "calculator") {
+    } else if (name === "calculator") {
       setLineColours(["#ffefba", "#fff5d3", "#ffffff"]);
       setVerticalLineProps({
         verticalLineClass: "calculator",

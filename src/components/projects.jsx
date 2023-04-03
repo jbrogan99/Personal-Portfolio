@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
-export const Projects = ({ setProjects }) => {
+export const Projects = ({ setProjects, setActivePage, activePage }) => {
   const updateProjects = (projectName) => {
     const update = {
       recipe: false,
@@ -82,10 +82,14 @@ export const Projects = ({ setProjects }) => {
                 style={{
                   backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
                 }}
-                className="gradient"
+                className={`gradient ${
+                  activePage === value[0] ? "active-page" : "gradient"
+                }`}
                 onClick={() => {
                   recipeLineColour(value[0]);
-                  updateProjects(value[0]); // key
+                  updateProjects(value[0]);
+                  setActivePage(value[0]);
+                  // key
                 }}
               >
                 {value[1]} {/* value */}

@@ -9,7 +9,7 @@ export const Cv = () => {
         <p>
           Check out my{" "}
           <span>
-            <a href="#" className="gradient">
+            <a href="#" className={`cv-text ${verticalLine.verticalLineClass}`}>
               CV
             </a>
           </span>{" "}

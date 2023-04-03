@@ -10,6 +10,7 @@ import { Projects } from "./components/projects";
 import { TechStack } from "./components/techStack";
 import { Title } from "./components/title";
 import { useState, createContext, useContext } from "react";
+import { DescriptionProjects } from "./components/description-projects";
 
 const descLanding =
   "Hello, I’m Jack, a Front-End Software Engineer from Wigan. Over the past 3 years I have been developing creative, accessible, responsive and functional websites. Currently finishing my university degree in web design and development May 2023!  In my spare time I enjoy socialising, keeping fit and gaming, that’s if im not coding! ";
@@ -68,6 +69,8 @@ function App() {
     verticalLineClass: "",
   });
 
+  const [activePage, setActivePage] = useState("welcome");
+
   return (
     <>
       <UserContextVertical.Provider
@@ -89,14 +92,29 @@ function App() {
           {projects.calculator && <Title title="Calculator" />}
           <div id="grid-desktop">
             {projects.landing && <Description description={descLanding} />}
-            {projects.recipe && <Description description={recipe} />}
-            {projects.doughnut && <Description description={doughnut} />}
-            {projects.currency && <Description description={currency} />}
-            {projects.blackjack && <Description description={blackjack} />}
-            {projects.ecommerce && <Description description={ecommerce} />}
-            {projects.calculator && <Description description={calculator} />}
+            {projects.recipe && <DescriptionProjects description={recipe} />}
+            {projects.doughnut && (
+              <DescriptionProjects description={doughnut} />
+            )}
+            {projects.currency && (
+              <DescriptionProjects description={currency} />
+            )}
+            {projects.blackjack && (
+              <DescriptionProjects description={blackjack} />
+            )}
+            {projects.ecommerce && (
+              <DescriptionProjects description={ecommerce} />
+            )}
+            {projects.calculator && (
+              <DescriptionProjects description={calculator} />
+            )}
             <Cv />
-            <Projects projects={projects} setProjects={setProjects} />
+            <Projects
+              projects={projects}
+              setProjects={setProjects}
+              activePage={activePage}
+              setActivePage={setActivePage}
+            />
             <TechStack />
           </div>
         </UserContext.Provider>

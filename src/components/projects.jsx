@@ -27,16 +27,38 @@ export const Projects = ({ setProjects }) => {
 
   function recipeLineColour(value) {
     if (value === "recipe") {
-      setLineColours(["#FA8BFF", "#2BD2FF", "#2BFF88"]);
+      setLineColours([
+        "rgba(252, 37, 103, 1)",
+        "rgba(250, 38, 151, 1)",
+        "rgba(186, 8, 181, 1)",
+      ]);
       setVerticalLineProps({
-        verticalLineColours: `linear-gradient(to bottom,#FA8BFF, #2BD2FF, #2BFF88)`,
-        verticalLineClass: "clicked",
+        verticalLineClass: "recipe",
       });
     } else if (value === "doughnut") {
-      setLineColours(["#FF9A8B", "#FF6A88", "#FF99AC"]);
+      setLineColours(["#642b73", "#812d73", "#c6426e"]);
       setVerticalLineProps({
-        verticalLineColours: `linear-gradient(to bottom,#FF9A8B, #FF6A88, #FF99AC)`,
         verticalLineClass: "doughnut",
+      });
+    } else if (value === "currency") {
+      setLineColours(["#304352", "#607686", "#d7d2cc"]);
+      setVerticalLineProps({
+        verticalLineClass: "currency",
+      });
+    } else if (value === "blackjack") {
+      setLineColours(["#2980b9", "#d0f2ff", "#ffffff"]);
+      setVerticalLineProps({
+        verticalLineClass: "blackjack",
+      });
+    } else if (value === "ecommerce") {
+      setLineColours(["#a8ff78", "#78ffd6", "#b6ffe9"]);
+      setVerticalLineProps({
+        verticalLineClass: "ecommerce",
+      });
+    } else if (value === "calculator") {
+      setLineColours(["#ffefba", "#fff5d3", "#ffffff"]);
+      setVerticalLineProps({
+        verticalLineClass: "calculator",
       });
     }
   }
@@ -45,8 +67,11 @@ export const Projects = ({ setProjects }) => {
 
   const { lineColours, setLineColours } = useContext(UserContext);
   const { setVerticalLineProps } = useContext(UserContextVertical);
+  const { verticalLine } = useContext(UserContextVertical);
   return (
-    <section className="projects-container gradient">
+    <section
+      className={`projects-container gradient ${verticalLine.verticalLineClass}`}
+    >
       <h2>Projects</h2>
       <ul>
         {Object.entries(values).map((value) => {

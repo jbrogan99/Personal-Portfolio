@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
-import UserContext from "./userContext";
+import React from "react";
 
 export const Title = ({ title }) => {
-  const { lineColours } = useContext(UserContext);
   return (
     <section className="wrapper">
       <div className="typewriter">

@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
 
-const UserContextVertical = createContext();
+const UserContextVertical = createContext(); //create context function
 
 export default UserContextVertical;

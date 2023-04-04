@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import React from "react";
 import UserContext from "./components/userContext";
 import UserContextVertical from "./components/userContextVertical";
@@ -9,12 +8,13 @@ import { Cv } from "./components/cv";
 import { Projects } from "./components/projects";
 import { TechStack } from "./components/techStack";
 import { Title } from "./components/title";
-import { useState, createContext, useContext } from "react";
+import { useState } from "react";
 import { DescriptionProjects } from "./components/description-projects";
+
+// descriptions for all projects / lading page
 
 const descLanding =
   "Hello, I’m Jack, a Front-End Software Engineer from Wigan. Over the past 3 years I have been developing creative, accessible, responsive and functional websites. Currently finishing my university degree in web design and development May 2023!  In my spare time I enjoy socialising, keeping fit and gaming, that’s if im not coding! ";
-
 const recipe =
   "This is a recipe application designed for students, with the aid of helping them eat more nutritional foods. Thereby, providing recommendations that accommodates the users feelings and environmental factors. Uses Spoonacular API to retrieve the meals. The application was developed using React & React Testing Library. ";
 const doughnut =
@@ -28,26 +28,8 @@ const ecommerce =
 const calculator =
   "This is a tip calculator that allows users to add bill amounts, add bill percentages (given or custom), and add the number of people. Returns the tip amount per person and the total bill (including tip).";
 
-// function description(type) {
-//   switch (type) {
-//     case "recipe":
-//       return <Description description={recipe} />;
-//     case "doughnut":
-//       return <Description description={doughnut} />;
-//     case "currency":
-//       return <Description description={currency} />;
-//     case "blackjack":
-//       return <Description description={blackjack} />;
-//     case "ecommerce":
-//       return <Description description={ecommerce} />;
-//     case "calculator":
-//       return <Description description={calculator} />;
-//     default:
-//     // return <Description description={descLanding} />;
-//   }
-// }
-
 function App() {
+  // use state with landing page set to true so correct info shows on load
   const [projects, setProjects] = useState({
     recipe: false,
     doughnut: false,
@@ -57,20 +39,23 @@ function App() {
     calculator: false,
     landing: true,
   });
+  //line colours use state with initial colours set to show on load (horizontal)
   const [lineColours, setLineColours] = useState([
     "#1fa2ff",
     "#12d8fa",
     "#a6ffcb",
   ]);
-
+  //line colours use state with initial colours set to show on load (vertical)
   const [verticalLine, setVerticalLineProps] = useState({
     verticalLineColours:
       "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)",
     verticalLineClass: "",
   });
 
+  // active page set to home to show initially to have home tag highlighted on load
   const [activePage, setActivePage] = useState("home");
 
+  // function that takes in the project name to update to the new state that gets set to true
   const updateProjects = (projectName) => {
     const update = {
       recipe: false,
@@ -87,6 +72,7 @@ function App() {
 
   return (
     <>
+      {/*Use context provider allows all components contained to have access to the context set, passing in the values to the value keyword */}
       <UserContextVertical.Provider
         value={{
           verticalLine,
@@ -101,6 +87,7 @@ function App() {
             setActivePage={setActivePage}
             updateProjects={updateProjects}
           />
+          {/*show title of the page set to true*/}
           {projects.landing && <Title title="Welcome." />}
           {projects.recipe && <Title title="Recipe" />}
           {projects.doughnut && <Title title="Doughnut" />}
@@ -109,6 +96,7 @@ function App() {
           {projects.ecommerce && <Title title="E-commerce Trainer" />}
           {projects.calculator && <Title title="Calculator" />}
           <div id="grid-desktop">
+            {/*show description of the page set to true */}
             {projects.landing && <Description description={descLanding} />}
             {projects.recipe && (
               <DescriptionProjects

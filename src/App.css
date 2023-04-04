@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Gruppo&family=Source+Code+Pro&family=Tangerine:wght@700&display=swap");
 
+/* assign variables to styles to make code easier to read and for easier re-use*/
 :root {
   --gruppo: "Gruppo", "cursive";
   --cormorant: "Cormorant", "serif";

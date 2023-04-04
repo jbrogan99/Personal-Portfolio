@@ -1,12 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
-export const Projects = ({
-  setProjects,
-  setActivePage,
-  activePage,
-  updateProjects,
-}) => {
+export const Projects = ({ setActivePage, activePage, updateProjects }) => {
   const values = {
     recipe: "Recipe",
     doughnut: "Doughnut",
@@ -16,7 +11,8 @@ export const Projects = ({
     calculator: "Calculator",
   };
 
-  function recipeLineColour(name) {
+  function changeLineColours(name) {
+    //function that changes line colours
     if (name === "recipe") {
       setLineColours([
         "rgba(252, 37, 103, 1)",
@@ -53,8 +49,6 @@ export const Projects = ({
       });
     }
   }
-  // console.log("line colour update", lineColours);
-  // console.log("vlaue,", value);
 
   const { lineColours, setLineColours } = useContext(UserContext);
   const { setVerticalLineProps } = useContext(UserContextVertical);
@@ -64,31 +58,34 @@ export const Projects = ({
       className={`projects-container gradient ${verticalLine.verticalLineClass}`}
     >
       <h2>Projects</h2>
-      <ul>
-        {Object.entries(values).map((value) => {
-          /*Loop round values array*/
-          return (
-            <li>
-              <span
-                style={{
-                  backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-                }}
-                className={`gradient ${
-                  activePage === value[0] ? "active-page" : "gradient"
-                }`}
-                onClick={() => {
-                  recipeLineColour(value[0]);
-                  updateProjects(value[0]);
-                  setActivePage(value[0]);
-                  // key
-                }}
-              >
-                {value[1]} {/* value */}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
+      <nav>
+        <ul>
+          {Object.entries(values).map((value) => {
+            /*Loop round values array*/
+            return (
+              <li>
+                {/*onClicks pass through the keys (value[0]) from the values object */}
+                <span
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+                  }}
+                  className={`gradient ${
+                    activePage === value[0] ? "active-page" : "gradient"
+                  }`}
+                  onClick={() => {
+                    changeLineColours(value[0]);
+                    updateProjects(value[0]);
+                    setActivePage(value[0]);
+                  }}
+                >
+                  {value[1]}{" "}
+                  {/* gets value[1] (title for page) from value object */}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </section>
   );
 };

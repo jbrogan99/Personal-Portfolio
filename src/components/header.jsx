@@ -6,13 +6,14 @@ import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
 
 export const Header = ({ activePage, setActivePage, updateProjects }) => {
-  const { lineColours, setLineColours } = useContext(UserContext);
-  const { setVerticalLineProps } = useContext(UserContextVertical);
+  const { lineColours, setLineColours } = useContext(UserContext); // destructure use context to obtain horizontal line colours
+  const { setVerticalLineProps } = useContext(UserContextVertical); // destructure use context to obtain vertical line colours
 
   function handleActivePage(page) {
-    setActivePage(page);
-    updateProjects("landing");
+    setActivePage(page); // active page set to home
+    updateProjects("landing"); // landing page set to true
     if (page === "home") {
+      // update line colours if page is home
       setLineColours(["#1fa2ff", "#12d8fa", "#a6ffcb"]);
       setVerticalLineProps({
         verticalLineClass: "home",
@@ -23,8 +24,9 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
   return (
     <>
       <header>
-        <span className="header-text-container">
+        <div className="header-text-container">
           <p id="name">Jack Brogan</p>
+          {/*check if active page is home, then set classname to active-page else empty string*/}
           <p
             className={`home-text ${
               activePage === "home" ? "active-page" : ""
@@ -33,10 +35,12 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
           >
             Home
           </p>
-        </span>
-        <span className="header-imgs-container">
+        </div>
+        <div className="header-imgs-container">
           <div className="icons-container">
             <a href="https://github.com/jbrogan99?tab=repositories">
+              {" "}
+              {/*github address*/}
               <img
                 alt="github logo"
                 src={github}
@@ -45,14 +49,16 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
             </a>
           </div>
           <div className="icons-container">
-            <a href="mailto:jack.brogan99@gmail.com?subject=Mail from NAME OF SITE">
+            <a href="mailto:jack.brogan99@gmail.com?subject=Mail-from-portfolio-jbrogan">
               {" "}
-              {/*Add name of live site here e.g. helpO.com*/}
+              {/*opens up email for client with my email address pre configured*/}
               <img alt="mail logo" src={mail} className="mail-icon icon-imgs" />
             </a>
           </div>
           <div className="icons-container">
             <a href="https://www.linkedin.com/in/jack-brogan/">
+              {" "}
+              {/*linkedin address*/}
               <img
                 alt="linkdin logo"
                 src={linkedin}
@@ -60,8 +66,9 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
               />
             </a>
           </div>
-        </span>
+        </div>
       </header>
+      {/*dynamically update line colours */}
       <hr
         style={{
           backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,

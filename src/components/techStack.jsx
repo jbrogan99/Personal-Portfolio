@@ -10,115 +10,112 @@ import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
 
 export const TechStack = () => {
-  const { verticalLine } = useContext(UserContextVertical);
-  const { lineColours } = useContext(UserContext);
+  const { verticalLine } = useContext(UserContextVertical); // destructure vl
+  const { lineColours } = useContext(UserContext); // destructure line colours
   return (
     <section
       className={`tech-stack-container ${verticalLine.verticalLineClass}`}
     >
-      <span className="tech-stack-title-container">
+      {" "}
+      {/*add vl class*/}
+      <div className="tech-stack-title-container">
         <h2>Tech Stack</h2>
-      </span>
-      <ul className="ul-tech">
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+      </div>
+      <aside className="ul-tech">
+        {/*dynamically change line colours*/}
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
         <div className="tech-container">
-          <li className="react tech-name">React</li>
-          <li className="tech-logo-container">
+          <p className="react tech-name">React</p>
+          <div className="tech-logo-container">
             <img src={react} alt="react logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+
         <div className="tech-container">
-          <li className="ts tech-name">TypeScript</li>
-          <li className="tech-logo-container">
+          <p className="ts tech-name">TypeScript</p>
+          <div className="tech-logo-container">
             <img src={typescript} alt="typescript logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+
         <div className="tech-container">
-          <li className="html tech-name">HTML</li>
-          <li className="tech-logo-container">
+          <p className="html tech-name">HTML</p>
+          <div className="tech-logo-container">
             <img src={html} alt="html logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+
         <div className="tech-container">
-          <li className="css tech-name">CSS</li>
-          <li className="tech-logo-container">
+          <p className="css tech-name">CSS</p>
+          <div className="tech-logo-container">
             <img src={css} alt="css logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+
         <div className="tech-container">
-          <li className="js tech-name">JavaScript</li>
-          <li className="tech-logo-container">
+          <p className="js tech-name">JavaScript</p>
+          <div className="tech-logo-container">
             <img src={js} alt="javascript logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+
         <div className="tech-container">
-          <li className="react-testing tech-name">React Testing Library</li>
-          <li className="tech-logo-container">
+          <p className="react-testing tech-name">React Testing Library</p>
+          <div className="tech-logo-container">
             <img src={reactTesting} alt="react testing library logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
         <div className="tech-container">
-          <li className="jest tech-name">Jest</li>
-          <li className="tech-logo-container">
+          <p className="jest tech-name">Jest</p>
+          <div className="tech-logo-container">
             <img src={jestTesting} alt="jest testing library logo" />
-          </li>
+          </div>
         </div>
-        <li>
-          <hr
-            style={{
-              backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
-            }}
-          />
-        </li>
-      </ul>
+        <hr
+          style={{
+            backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
+          }}
+        />
+      </aside>
     </section>
   );
 };

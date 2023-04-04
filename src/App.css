@@ -101,13 +101,6 @@ body {
 }
 
 /*header*/
-/* header {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin: 1em 0 1em 0;
-  align-items: center;
-} */
 
 header {
   display: grid;
@@ -167,8 +160,6 @@ header {
   height: auto;
   margin: 0 auto;
   overflow: hidden;
-
-  /* background-color: #d1d1d1; */
 }
 
 hr {
@@ -179,7 +170,7 @@ hr {
 /*end of header*/
 
 /*description*/
-
+/* before peusdo element adds vertical line next to text  */
 .description-container::before {
   content: " ";
   width: 2px;
@@ -305,6 +296,7 @@ hr {
 /*projects*/
 .projects-container {
   padding: 10px;
+  /* puts border only on the corners of the projects container */
   background: linear-gradient(
         to right,
         var(--gradient-colors) 2px,
@@ -326,7 +318,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-
+/* updates border colours for certain classes */
 .projects-container.recipe {
   padding: 10px;
   background: linear-gradient(
@@ -346,7 +338,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-
+/* updates border colours for certain classes */
 .projects-container.doughnut {
   padding: 10px;
   background: linear-gradient(
@@ -369,7 +361,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-
+/* updates border colours for certain classes */
 .projects-container.currency {
   padding: 10px;
   background: linear-gradient(
@@ -392,7 +384,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-
+/* updates border colours for certain classes */
 .projects-container.blackjack {
   padding: 10px;
   background: linear-gradient(
@@ -417,6 +409,7 @@ hr {
   margin-top: 3em;
 }
 
+/* updates border colours for certain classes */
 .projects-container.ecommerce {
   padding: 10px;
   background: linear-gradient(
@@ -451,7 +444,7 @@ hr {
   cursor: pointer;
   color: white;
 }
-
+/* updates border colours for certain classes */
 .projects-container.calculator {
   padding: 10px;
   background: linear-gradient(
@@ -492,7 +485,6 @@ hr {
 
 .projects-container ul li span {
   text-decoration: none;
-
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% 1px;
@@ -511,6 +503,10 @@ hr {
   justify-content: space-between;
 }
 
+.tech-container img {
+  object-fit: cover;
+}
+
 .tech-logo-container {
   display: flex;
   justify-content: flex-end;
@@ -520,12 +516,6 @@ hr {
 
 .tech-name {
   align-self: center;
-}
-
-.tech-logo-container img {
-  object-fit: cover;
-  max-width: 100%;
-  width: 100%;
 }
 
 .tech-stack-container h2 {
@@ -543,7 +533,7 @@ a {
 
 /*end of tech stack*/
 
-/*desktop*/
+/*desktop view*/
 
 @media only screen and (min-width: 992px) {
   .typewriter h1 {

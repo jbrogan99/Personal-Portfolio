@@ -38,7 +38,11 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
         </div>
         <div className="header-imgs-container">
           <div className="icons-container">
-            <a href="https://github.com/jbrogan99?tab=repositories">
+            <a
+              href="https://github.com/jbrogan99?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               {/*github address*/}
               <img
@@ -49,14 +53,22 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
             </a>
           </div>
           <div className="icons-container">
-            <a href="mailto:jack.brogan99@gmail.com?subject=Mail-from-portfolio-jbrogan">
+            <a
+              href="mailto:jack.brogan99@gmail.com?subject=Mail-from-portfolio-jbrogan"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               {/*opens up email for client with my email address pre configured*/}
               <img alt="mail logo" src={mail} className="mail-icon icon-imgs" />
             </a>
           </div>
           <div className="icons-container">
-            <a href="https://www.linkedin.com/in/jack-brogan/">
+            <a
+              href="https://www.linkedin.com/in/jack-brogan/"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               {/*linkedin address*/}
               <img

@@ -11,11 +11,11 @@ export const DescriptionProjects = ({
   const { verticalLine } = useContext(UserContextVertical); // destructure use context to obtain vl classname
   return (
     <main className="description-container">
-      <span className={`gradient side-bar ${verticalLine.verticalLineClass}`}>
+      <div className={`gradient side-bar ${verticalLine.verticalLineClass}`}>
         {" "}
         {/*applying vl classname*/}
         <p>{description}</p>
-        <span className={"link-container"}>
+        <div className={"link-container"}>
           {/*If blackjack is not true then add a view site link on all other projects*/}
           {!projects.blackjack ? (
             <a
@@ -36,8 +36,8 @@ export const DescriptionProjects = ({
           >
             Github
           </a>
-        </span>
-      </span>
+        </div>
+      </div>
     </main>
   );
 };

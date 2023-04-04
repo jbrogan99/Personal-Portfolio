@@ -12,7 +12,7 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
   };
 
   function changeLineColours(name) {
-    //function that changes line colours
+    //function that changes line colours depending on name
     if (name === "recipe") {
       setLineColours([
         "rgba(252, 37, 103, 1)",
@@ -50,9 +50,10 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
     }
   }
 
-  const { lineColours, setLineColours } = useContext(UserContext);
-  const { setVerticalLineProps } = useContext(UserContextVertical);
-  const { verticalLine } = useContext(UserContextVertical);
+  const { lineColours, setLineColours } = useContext(UserContext); // destructure line colours variable and setLineColours function from use context
+  const { setVerticalLineProps, verticalLine } =
+    useContext(UserContextVertical); // destructure verticalLine variable and setVerticalLineColours function from use context
+
   return (
     <section
       className={`projects-container gradient ${verticalLine.verticalLineClass}`}
@@ -61,10 +62,10 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
       <nav>
         <ul>
           {Object.entries(values).map((value) => {
-            /*Loop round values array*/
+            /*Loop round values array, reducing hard coded repeated code*/
             return (
               <li>
-                {/*onClicks pass through the keys (value[0]) from the values object */}
+                {/*onClicks passes through the keys (value[0]) from the values array into the functions */}
                 <span
                   style={{
                     backgroundImage: `linear-gradient(to right, ${lineColours[0]}, ${lineColours[1]}, ${lineColours[2]})`,
@@ -79,7 +80,7 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
                   }}
                 >
                   {value[1]}{" "}
-                  {/* gets value[1] (title for page) from value object */}
+                  {/* gets value[1] (value / title for the page) from value array */}
                 </span>
               </li>
             );

@@ -30,9 +30,8 @@ export const TechStack = () => {
         />
         <div className="tech-container">
           <p className="react tech-name">React</p>
-          <div className="tech-logo-container">
-            <img src={react} alt="react logo" />
-          </div>
+
+          <img src={react} alt="react logo" />
         </div>
 
         <hr
@@ -43,9 +42,8 @@ export const TechStack = () => {
 
         <div className="tech-container">
           <p className="ts tech-name">TypeScript</p>
-          <div className="tech-logo-container">
-            <img src={typescript} alt="typescript logo" />
-          </div>
+
+          <img src={typescript} alt="typescript logo" />
         </div>
 
         <hr
@@ -56,9 +54,8 @@ export const TechStack = () => {
 
         <div className="tech-container">
           <p className="html tech-name">HTML</p>
-          <div className="tech-logo-container">
-            <img src={html} alt="html logo" />
-          </div>
+
+          <img src={html} alt="html logo" />
         </div>
 
         <hr
@@ -69,9 +66,8 @@ export const TechStack = () => {
 
         <div className="tech-container">
           <p className="css tech-name">CSS</p>
-          <div className="tech-logo-container">
-            <img src={css} alt="css logo" />
-          </div>
+
+          <img src={css} alt="css logo" />
         </div>
 
         <hr
@@ -82,9 +78,8 @@ export const TechStack = () => {
 
         <div className="tech-container">
           <p className="js tech-name">JavaScript</p>
-          <div className="tech-logo-container">
-            <img src={js} alt="javascript logo" />
-          </div>
+
+          <img src={js} alt="javascript logo" />
         </div>
 
         <hr
@@ -95,9 +90,8 @@ export const TechStack = () => {
 
         <div className="tech-container">
           <p className="react-testing tech-name">React Testing Library</p>
-          <div className="tech-logo-container">
-            <img src={reactTesting} alt="react testing library logo" />
-          </div>
+
+          <img src={reactTesting} alt="react testing library logo" />
         </div>
         <hr
           style={{
@@ -106,9 +100,8 @@ export const TechStack = () => {
         />
         <div className="tech-container">
           <p className="jest tech-name">Jest</p>
-          <div className="tech-logo-container">
-            <img src={jestTesting} alt="jest testing library logo" />
-          </div>
+
+          <img src={jestTesting} alt="jest testing library logo" />
         </div>
         <hr
           style={{

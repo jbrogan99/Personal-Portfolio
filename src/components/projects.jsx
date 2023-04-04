@@ -3,11 +3,11 @@ import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
 export const Projects = ({ setActivePage, activePage, updateProjects }) => {
   const values = {
-    recipe: "Recipe",
+    // recipe: "Recipe",
     doughnut: "Doughnut",
     currency: "Currency Converter",
     blackjack: "Blackjack",
-    ecommerce: "E-commerce Trainer",
+    // ecommerce: "E-commerce Trainer",
     calculator: "Calculator",
   };
 

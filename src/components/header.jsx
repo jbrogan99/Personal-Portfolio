@@ -24,7 +24,7 @@ export const Header = ({ activePage, setActivePage, updateProjects }) => {
   return (
     <>
       <header>
-        <div className="header-text-container">
+        <div className="header-text-container ">
           <p id="name">Jack Brogan</p>
           {/*check if active page is home, then set classname to active-page else empty string*/}
           <p

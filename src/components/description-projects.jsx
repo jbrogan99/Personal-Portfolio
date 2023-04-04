@@ -11,7 +11,7 @@ export const DescriptionProjects = ({
   const { verticalLine } = useContext(UserContextVertical); // destructure use context to obtain vl classname
   return (
     <main className="description-container">
-      <div className={`gradient side-bar ${verticalLine.verticalLineClass}`}>
+      <div className={`gradient side-bar  ${verticalLine.verticalLineClass}`}>
         {" "}
         {/*applying vl classname*/}
         <p>{description}</p>

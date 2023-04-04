@@ -100,7 +100,6 @@ export const TechStack = () => {
         />
         <div className="tech-container">
           <p className="jest tech-name">Jest</p>
-
           <img src={jestTesting} alt="jest testing library logo" />
         </div>
         <hr

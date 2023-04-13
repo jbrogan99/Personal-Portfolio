@@ -99,7 +99,7 @@ function App() {
             {/*show description of the page set to true */}
             {projects.landing && <Description description={descLanding} />}
             {projects.recipe && (
-              <DescriptionProjects
+              <DescriptionProjects // pass state down to components
                 projects={projects}
                 description={recipe}
                 gitHubRepo="https://github.com/jbrogan99/recipe-app"
@@ -146,6 +146,7 @@ function App() {
               />
             )}
             <Cv />
+            {/* pass state down to components  */}
             <Projects
               updateProjects={updateProjects}
               projects={projects}

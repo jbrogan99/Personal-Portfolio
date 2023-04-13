@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import UserContextVertical from "./userContextVertical";
 
 export const Description = ({ description }) => {
+  // destructure props
   const { verticalLine } = useContext(UserContextVertical);
   return (
     <main className="description-container">

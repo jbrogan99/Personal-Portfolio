@@ -12,6 +12,8 @@ export const Cv = () => {
           Check out my{" "}
           <span>
             <a
+              target="_blank"
+              rel="noreferrer"
               href="https://jack-brogan-cv.netlify.app/"
               className={`cv-text ${verticalLine.verticalLineClass}`}
             >

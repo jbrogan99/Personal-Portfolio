@@ -39,21 +39,6 @@ function App() {
     calculator: false,
     landing: true,
   });
-  //line colours use state with initial colours set to show on load (horizontal)
-  const [lineColours, setLineColours] = useState([
-    "#1fa2ff",
-    "#12d8fa",
-    "#a6ffcb",
-  ]);
-  //line colours use state with initial colours set to show on load (vertical)
-  const [verticalLine, setVerticalLineProps] = useState({
-    verticalLineColours:
-      "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)",
-    verticalLineClass: "",
-  });
-
-  // active page set to home to show initially to have home tag highlighted on load
-  const [activePage, setActivePage] = useState("home");
 
   // function that takes in the project name to update to the new state that gets set to true
   const updateProjects = (projectName) => {
@@ -69,6 +54,22 @@ function App() {
     update[projectName] = true;
     setProjects(update);
   };
+
+  //line colours use state with initial colours set to show on load (horizontal)
+  const [lineColours, setLineColours] = useState([
+    "#1fa2ff",
+    "#12d8fa",
+    "#a6ffcb",
+  ]);
+  //line colours use state with initial colours set to show on load (vertical)
+  const [verticalLine, setVerticalLineProps] = useState({
+    verticalLineColours:
+      "linear-gradient(to bottom, #1fa2ff, #12d8fa, #a6ffcb)",
+    verticalLineClass: "",
+  });
+
+  // active page set to home to show initially to have home tag highlighted on load
+  const [activePage, setActivePage] = useState("home");
 
   return (
     <>

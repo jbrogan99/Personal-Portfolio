@@ -61,10 +61,10 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
       <h2>Projects</h2>
       <nav>
         <ul>
-          {Object.entries(values).map((value) => {
+          {Object.entries(values).map((value, index) => {
             /*Loop round values array, reducing hard coded repeated code*/
             return (
-              <li>
+              <li key={index}>
                 {/*onClicks passes through the keys (value[0]) from the values array into the functions */}
                 <span
                   style={{

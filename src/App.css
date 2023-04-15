@@ -320,7 +320,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container */
 .projects-container.recipe {
   padding: 10px;
   background: linear-gradient(
@@ -340,7 +340,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container*/
 .projects-container.doughnut {
   padding: 10px;
   background: linear-gradient(
@@ -363,7 +363,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container */
 .projects-container.currency {
   padding: 10px;
   background: linear-gradient(
@@ -386,7 +386,7 @@ hr {
   background-size: 67px 67px;
   margin-top: 3em;
 }
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container */
 .projects-container.blackjack {
   padding: 10px;
   background: linear-gradient(
@@ -411,7 +411,7 @@ hr {
   margin-top: 3em;
 }
 
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container */
 .projects-container.ecommerce {
   padding: 10px;
   background: linear-gradient(
@@ -446,7 +446,7 @@ hr {
   cursor: pointer;
   color: white;
 }
-/* updates border colours for certain classes */
+/* puts border only on the corners of the projects container */
 .projects-container.calculator {
   padding: 10px;
   background: linear-gradient(
@@ -506,7 +506,7 @@ hr {
 }
 
 .tech-container img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tech-logo-container {

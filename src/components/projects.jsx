@@ -3,12 +3,12 @@ import UserContext from "./userContext";
 import UserContextVertical from "./userContextVertical";
 export const Projects = ({ setActivePage, activePage, updateProjects }) => {
   const values = {
-    // recipe: "Recipe",
     doughnut: "Doughnut",
     currency: "Currency Converter",
     blackjack: "Blackjack",
+    recipe: "Recipe",
     // ecommerce: "E-commerce Trainer",
-    calculator: "Calculator",
+    // calculator: "Calculator",
   };
 
   function changeLineColours(name) {

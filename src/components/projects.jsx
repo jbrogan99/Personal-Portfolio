@@ -6,7 +6,7 @@ export const Projects = ({ setActivePage, activePage, updateProjects }) => {
     doughnut: "Doughnut",
     currency: "Currency Converter",
     blackjack: "Blackjack",
-    recipe: "Recipe",
+    // recipe: "Recipe",
     // ecommerce: "E-commerce Trainer",
     // calculator: "Calculator",
   };
